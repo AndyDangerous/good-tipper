@@ -23,6 +23,11 @@ export default Ember.Controller.extend({
 
   totalBill: function(){
                return parseInt(this.get('billAmount'), 10) + this.get('tipAmount');
-             }.property('tipAmount', 'billAmount')
+             }.property('tipAmount', 'billAmount'),
 
+  actions: {
+             setTipPercentage: function (amount) {
+                                 this.set('tipPercentage', amount);
+                               }
+           }
 });
